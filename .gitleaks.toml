@@ -1,0 +1,9 @@
+title = "T gitleaks config"
+
+[allowlist]
+description = "Allow public donation identifiers only"
+regexes = [
+  '''tmps8346991530153183@slc''',
+  '''TLFLEDbN47bSBkWeqZzMNgkrzRK64RHbVn''',
+  '''475627577'''
+]

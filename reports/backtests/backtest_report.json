@@ -1,0 +1,20 @@
+{
+  "trades": [
+    {
+      "asset": "BTC/USDT",
+      "entry_price": 68504.76,
+      "exit_price": 68535.128,
+      "side": "LONG",
+      "pnl": 4.43,
+      "return_pct": 0.0443,
+      "alpha": 81.7,
+      "z": 52.3963
+    }
+  ],
+  "starting_balance": 10000.0,
+  "ending_balance": 10004.43,
+  "max_drawdown_pct": 0.0,
+  "win_rate_pct": 100.0,
+  "profit_factor": "inf",
+  "net_pnl": 4.43
+}

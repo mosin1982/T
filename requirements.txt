@@ -1,0 +1,13 @@
+bandit
+black
+ccxt
+mypy
+numpy
+pandas
+pip-audit
+pytest
+python-dotenv
+python-telegram-bot
+ruff
+websockets
+yfinance
