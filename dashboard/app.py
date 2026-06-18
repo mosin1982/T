@@ -1,18 +1,9 @@
-<<<<<<< HEAD
-python -m black dashboard/app.py
-python -m ruff check dashboard/app.py --fix
-python -m pytest -q
-git add dashboard/app.py
-git commit -m "Add formatted dashboard app"
-git push
-=======
 from __future__ import annotations
 
 import json
 from pathlib import Path
 
 import streamlit as st
-
 
 st.set_page_config(
     page_title="T Mission Dashboard",
@@ -25,8 +16,7 @@ st.caption("T Technology Research Lab — Financial Intelligence Operating Syste
 
 st.warning("Research only. Not financial advice.")
 
-st.markdown(
-    """
+st.markdown("""
     ### System Overview
 
     T is an open-source Financial Intelligence Operating System for:
@@ -36,8 +26,7 @@ st.markdown(
     - Backtesting
     - Risk analysis
     - Smart money intelligence
-    """
-)
+    """)
 
 col1, col2, col3, col4 = st.columns(4)
 
@@ -48,11 +37,10 @@ with col2:
     st.metric("Mode", "Research Only")
 
 with col3:
-    st.metric("Release", "v0.8.2-alpha")
+    st.metric("Release", "v0.9.x-alpha")
 
 with col4:
     st.metric("Status", "Alpha")
-
 
 st.divider()
 
@@ -71,7 +59,6 @@ for name, ok in checks.items():
         st.success(f"{name}: OK")
     else:
         st.error(f"{name}: Missing")
-
 
 st.divider()
 
@@ -99,32 +86,25 @@ if report_path.exists():
 
         st.json(report)
 
-    except Exception as exc:
+    except (json.JSONDecodeError, OSError) as exc:
         st.error(f"Could not load backtest report: {exc}")
 else:
-    st.info(
-        "No backtest report found yet. Run this command first: "
-        "`python t_cli.py backtest`"
-    )
-
+    st.info("No backtest report found yet. Run this command first: " "`python t_cli.py backtest`")
 
 st.divider()
 
 st.subheader("Next Alpha Roadmap")
 
-st.markdown(
-    """
+st.markdown("""
     - Streamlit dashboard
     - Backtest charts
     - Real-world observation mode UI
     - Strategy comparison
     - README screenshots
-    - v0.9.0-alpha release
-    """
-)
+    - v0.9.x-alpha release
+    """)
 
 st.caption("━━━━━━━━━━━━━━━━━━━━")
 st.caption("T")
 st.caption("T Technology Research Lab")
 st.caption("━━━━━━━━━━━━━━━━━━━━")
->>>>>>> feature/v0.9-dashboard
