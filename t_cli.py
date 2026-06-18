@@ -31,7 +31,7 @@ def main() -> None:
     backtest.add_argument("--fee-bps", type=float, default=5.0)
     backtest.add_argument("--slippage-bps", type=float, default=3.0)
 
-    mission = sub.add_parser("mission-control", help="Show T system health")
+    sub.add_parser("mission-control", help="Show T system health")
 
     args = parser.parse_args()
 
