@@ -2,7 +2,6 @@ from dataclasses import asdict
 from pathlib import Path
 import json
 
-
 from backtest.engine import BacktestResult
 
 def result_to_dict(result: BacktestResult) -> dict:
