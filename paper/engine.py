@@ -1,6 +1,7 @@
 from dataclasses import dataclass, field
 from uuid import uuid4
 
+
 @dataclass
 class PaperTrade:
     trade_id: str
@@ -13,6 +14,7 @@ class PaperTrade:
     pnl: float = 0.0
     status: str = "OPEN"
 
+
 @dataclass
 class PaperAccount:
     starting_balance: float = 10000.0
@@ -23,9 +25,13 @@ class PaperAccount:
     def __post_init__(self) -> None:
         self.balance = self.starting_balance
 
-    def open_trade(self, asset: str, side: str, entry_price: float, risk_pct: float = 1.0) -> PaperTrade:
+    def open_trade(
+        self, asset: str, side: str, entry_price: float, risk_pct: float = 1.0
+    ) -> PaperTrade:
         risk_amount = self.balance * (risk_pct / 100.0)
-        quantity = risk_amount / max(entry_price * 0.01, 1e-9)  # Demo sizing: 1% stop distance assumption
+        quantity = risk_amount / max(
+            entry_price * 0.01, 1e-9
+        )  # Demo sizing: 1% stop distance assumption
         trade = PaperTrade(
             trade_id=str(uuid4()),
             asset=asset,
@@ -57,12 +63,16 @@ class PaperAccount:
         losses = [t for t in self.closed_trades if t.pnl <= 0]
         gross_profit = sum(t.pnl for t in wins)
         gross_loss = abs(sum(t.pnl for t in losses))
-        profit_factor = gross_profit / gross_loss if gross_loss else float("inf") if gross_profit else 0.0
+        profit_factor = (
+            gross_profit / gross_loss if gross_loss else float("inf") if gross_profit else 0.0
+        )
         return {
             "starting_balance": round(self.starting_balance, 2),
             "ending_balance": round(self.balance, 2),
             "closed_trades": len(self.closed_trades),
-            "win_rate_pct": round((len(wins) / len(self.closed_trades) * 100), 2) if self.closed_trades else 0,
+            "win_rate_pct": (
+                round((len(wins) / len(self.closed_trades) * 100), 2) if self.closed_trades else 0
+            ),
             "profit_factor": round(profit_factor, 2) if profit_factor != float("inf") else "inf",
             "net_pnl": round(self.balance - self.starting_balance, 2),
         }

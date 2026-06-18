@@ -1,6 +1,7 @@
 def clamp(value: float, low: float = 0, high: float = 100) -> float:
     return max(low, min(high, value))
 
+
 def t_alpha_score(
     volume_score: float,
     structure_score: float,

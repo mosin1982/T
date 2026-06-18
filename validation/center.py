@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 
+
 @dataclass
 class SignalOutcome:
     signal_id: str
@@ -19,6 +20,7 @@ class SignalOutcome:
             "pnl_pct": round(pnl_pct, 2),
             "result": "WIN" if pnl_pct > 0 else "LOSS",
         }
+
 
 def accuracy_report(outcomes: list[SignalOutcome]) -> dict:
     results = [o.result() for o in outcomes]

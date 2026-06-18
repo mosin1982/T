@@ -1,5 +1,6 @@
 from modes.scoring import Signal
 
+
 def format_console_alert(signal: Signal) -> str:
     return f"""
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -19,6 +20,7 @@ Powered by T Technology Research Lab
 Research only. Not financial advice.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 """.strip()
+
 
 def format_telegram_alert(signal: Signal) -> str:
     return f"""

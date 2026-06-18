@@ -1,5 +1,6 @@
 from plugins.base import TPlugin
 
+
 class SampleSentimentPlugin(TPlugin):
     name = "sample_sentiment"
     version = "0.1.0"

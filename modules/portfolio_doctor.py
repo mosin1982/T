@@ -6,4 +6,8 @@ def portfolio_health(positions: list[dict]) -> dict:
     concentration = largest / total
     health = max(0, 100 - concentration * 100)
     risk = "HIGH" if concentration > 0.55 else "MEDIUM" if concentration > 0.35 else "LOW"
-    return {"health_score": round(health, 2), "risk": risk, "largest_position_pct": round(concentration * 100, 2)}
+    return {
+        "health_score": round(health, 2),
+        "risk": risk,
+        "largest_position_pct": round(concentration * 100, 2),
+    }

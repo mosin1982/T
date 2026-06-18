@@ -1,5 +1,6 @@
 from pathlib import Path
 
+
 def system_health() -> dict:
     checks = {
         "repo_files": Path("README.md").exists(),

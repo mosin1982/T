@@ -1,10 +1,12 @@
 from dataclasses import dataclass, field
 
+
 @dataclass
 class Node:
     id: str
     type: str
     properties: dict = field(default_factory=dict)
+
 
 @dataclass
 class Edge:
@@ -13,6 +15,7 @@ class Edge:
     relation: str
     weight: float = 1.0
     properties: dict = field(default_factory=dict)
+
 
 class NexusGraph:
     """In-memory intelligence graph foundation.
@@ -30,7 +33,9 @@ class NexusGraph:
         self.nodes[node_id] = node
         return node
 
-    def connect(self, source: str, target: str, relation: str, weight: float = 1.0, **properties) -> Edge:
+    def connect(
+        self, source: str, target: str, relation: str, weight: float = 1.0, **properties
+    ) -> Edge:
         edge = Edge(source, target, relation, weight, properties)
         self.edges.append(edge)
         return edge

@@ -4,17 +4,22 @@ import json
 
 from backtest.engine import BacktestResult
 
+
 def result_to_dict(result: BacktestResult) -> dict:
     d = asdict(result)
     if d["profit_factor"] == float("inf"):
         d["profit_factor"] = "inf"
     return d
 
-def save_backtest_report(result: BacktestResult, path: str = "reports/backtests/backtest_report.json") -> str:
+
+def save_backtest_report(
+    result: BacktestResult, path: str = "reports/backtests/backtest_report.json"
+) -> str:
     out = Path(path)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(result_to_dict(result), indent=2), encoding="utf-8")
     return str(out)
+
 
 def format_backtest_summary(result: BacktestResult) -> str:
     return f"""

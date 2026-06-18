@@ -1,5 +1,6 @@
 from datetime import datetime, timezone
 
+
 def source_trust_score(source: str) -> int:
     source = source.lower()
     if source in {"binance", "nse", "zerodha", "dhan", "bybit", "okx"}:
@@ -7,6 +8,7 @@ def source_trust_score(source: str) -> int:
     if source in {"twitter", "x", "reddit", "telegram"}:
         return 45
     return 30
+
 
 def validate_market_tick(tick: dict) -> dict:
     issues = []
@@ -22,6 +24,7 @@ def validate_market_tick(tick: dict) -> dict:
         "issues": issues,
         "checked_at": datetime.now(timezone.utc).isoformat(),
     }
+
 
 def freshness_score(age_seconds: float) -> int:
     if age_seconds <= 5:

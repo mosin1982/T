@@ -7,6 +7,7 @@ Optional dependency:
 Run:
     uvicorn api.server:app --reload
 """
+
 from typing import Any
 
 try:
@@ -21,6 +22,7 @@ if FastAPI:
 else:
     app = None
 
+
 def calculate_alpha(payload: dict[str, Any]) -> dict[str, Any]:
     score = alpha_score(
         z=float(payload.get("z", 0)),
@@ -32,7 +34,9 @@ def calculate_alpha(payload: dict[str, Any]) -> dict[str, Any]:
     )
     return {"alpha_score": score, "status": "research_only"}
 
+
 if app:
+
     @app.get("/health")
     def health() -> dict[str, str]:
         return {"status": "ok", "system": "T"}
@@ -44,4 +48,5 @@ if app:
     @app.get("/api/mission-control")
     def api_mission_control() -> dict[str, Any]:
         from mission_control.health import system_health
+
         return system_health()

@@ -1,5 +1,6 @@
 from datetime import datetime
 
+
 def generate_daily_report(top_assets: list[str], risks: list[str], opportunities: list[str]) -> str:
     return f"""# T Daily Market Intelligence Report
 Date: {datetime.utcnow().date()}

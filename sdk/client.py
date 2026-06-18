@@ -4,8 +4,15 @@ class TClient:
     Future versions may connect to the API Gateway.
     """
 
-    def alpha_score(self, z: float, oi_score: float = 50, sentiment_score: float = 50, structure_score: float = 50) -> dict:
+    def alpha_score(
+        self,
+        z: float,
+        oi_score: float = 50,
+        sentiment_score: float = 50,
+        structure_score: float = 50,
+    ) -> dict:
         from modes.scoring import alpha_score
+
         return {
             "alpha_score": alpha_score(
                 z=z,
@@ -17,4 +24,5 @@ class TClient:
 
     def mission_control(self) -> dict:
         from mission_control.health import system_health
+
         return system_health()

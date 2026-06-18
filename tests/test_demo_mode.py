@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 4d4b5c2 (Fix CI lint errors)
 from modes.demo_mode import run_demo
+
 
 def test_demo_mode_generates_signal():
     signals = run_demo("data/sample/btc_demo.csv", send_telegram=False)

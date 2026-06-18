@@ -1,5 +1,6 @@
 from realworld.binance_stream import BinancePublicStream
 
+
 def test_process_tick_detects_signal_when_history_exists():
     stream = BinancePublicStream(symbol="btcusdt", threshold=1.0, cooldown_seconds=0)
     stream.minute_volumes.extend([100, 110, 95, 105, 100, 98, 102])

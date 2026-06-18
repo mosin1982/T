@@ -1,5 +1,6 @@
 from events.event_store import JsonlEventStore, new_event
 
+
 def test_event_store_roundtrip(tmp_path):
     store = JsonlEventStore(str(tmp_path / "events.jsonl"))
     event = new_event("TestEvent", {"x": 1})

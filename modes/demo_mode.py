@@ -8,6 +8,7 @@ from modes.scoring import Signal, alpha_score, build_explanation, risk_label, z_
 from paper.engine import PaperAccount
 from events.event_store import JsonlEventStore, new_event
 
+
 def run_demo(csv_path: str, send_telegram: bool = False) -> list[Signal]:
     path = Path(csv_path)
     volumes: list[float] = []
@@ -30,13 +31,15 @@ def run_demo(csv_path: str, send_telegram: bool = False) -> list[Signal]:
                 liquidation_score=float(row["liquidation_score"]),
             )
             risk = risk_label(alpha, z)
-            explanation = build_explanation(z, alpha, float(row["oi_score"]), float(row["sentiment_score"]))
+            explanation = build_explanation(
+                z, alpha, float(row["oi_score"]), float(row["sentiment_score"])
+            )
             direction = "LONG_OBSERVATION" if alpha >= 70 and z >= 3 else "NO_TRADE"
 
             if direction != "NO_TRADE":
                 signal = Signal(asset, price, z, alpha, risk, direction, explanation)
                 signals.append(signal)
-                event_store.append(new_event('SignalGenerated', signal.__dict__))
+                event_store.append(new_event("SignalGenerated", signal.__dict__))
                 print(format_console_alert(signal))
                 account.open_trade(asset=asset, side="LONG", entry_price=price, risk_pct=1.0)
                 if send_telegram:
@@ -54,12 +57,14 @@ def run_demo(csv_path: str, send_telegram: bool = False) -> list[Signal]:
     print(account.summary())
     return signals
 
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run T Demo Mode with sample data.")
     parser.add_argument("--csv", default="data/sample/btc_demo.csv")
     parser.add_argument("--telegram", action="store_true")
     args = parser.parse_args()
     run_demo(args.csv, args.telegram)
+
 
 if __name__ == "__main__":
     main()

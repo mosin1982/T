@@ -3,6 +3,7 @@ import sqlite3
 from pathlib import Path
 from typing import Any
 
+
 class SQLiteDataLake:
     def __init__(self, path: str = "data/t_datalake.sqlite3"):
         self.path = Path(path)

@@ -1,6 +1,7 @@
 import statistics
 from dataclasses import dataclass
 
+
 @dataclass
 class Signal:
     asset: str
@@ -11,8 +12,10 @@ class Signal:
     direction: str
     explanation: str
 
+
 def clamp(value: float, low: float = 0.0, high: float = 100.0) -> float:
     return max(low, min(high, value))
+
 
 def z_score(current_volume: float, history: list[float]) -> float:
     if len(history) < 3:
@@ -22,6 +25,7 @@ def z_score(current_volume: float, history: list[float]) -> float:
     if std == 0:
         return 0.0
     return (current_volume - mean) / std
+
 
 def alpha_score(
     z: float,
@@ -42,6 +46,7 @@ def alpha_score(
     )
     return round(clamp(score), 2)
 
+
 def risk_label(alpha: float, z: float) -> str:
     if z > 5:
         return "HIGH"
@@ -50,6 +55,7 @@ def risk_label(alpha: float, z: float) -> str:
     if alpha >= 55:
         return "MEDIUM"
     return "HIGH"
+
 
 def build_explanation(z: float, alpha: float, oi_score: float, sentiment_score: float) -> str:
     reasons = []

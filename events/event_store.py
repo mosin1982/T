@@ -5,12 +5,14 @@ from pathlib import Path
 from typing import Any
 from uuid import uuid4
 
+
 @dataclass(frozen=True)
 class Event:
     event_id: str
     event_type: str
     timestamp: str
     payload: dict[str, Any]
+
 
 def new_event(event_type: str, payload: dict[str, Any]) -> Event:
     return Event(
@@ -19,6 +21,7 @@ def new_event(event_type: str, payload: dict[str, Any]) -> Event:
         timestamp=datetime.now(timezone.utc).isoformat(),
         payload=payload,
     )
+
 
 class JsonlEventStore:
     def __init__(self, path: str = "data/events/events.jsonl"):

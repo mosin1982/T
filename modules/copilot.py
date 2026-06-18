@@ -5,4 +5,9 @@ def copilot_decision(alpha_score: float, risk_label: str, confirmation: bool) ->
         action = "WAIT_FOR_CONFIRMATION"
     else:
         action = "AVOID"
-    return {"action": action, "alpha_score": alpha_score, "risk": risk_label, "confirmation": confirmation}
+    return {
+        "action": action,
+        "alpha_score": alpha_score,
+        "risk": risk_label,
+        "confirmation": confirmation,
+    }

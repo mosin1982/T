@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def z_score(current_volume: float, volume_history: list[float]) -> float:
     if not volume_history:
         return 0.0

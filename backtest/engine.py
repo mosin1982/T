@@ -4,6 +4,7 @@ from pathlib import Path
 
 from modes.scoring import alpha_score, z_score
 
+
 @dataclass
 class BacktestTrade:
     asset: str
@@ -15,6 +16,7 @@ class BacktestTrade:
     alpha: float
     z: float
 
+
 @dataclass
 class BacktestResult:
     trades: list[BacktestTrade]
@@ -25,11 +27,15 @@ class BacktestResult:
     profit_factor: float
     net_pnl: float
 
-def apply_costs(entry: float, exit: float, fee_bps: float, slippage_bps: float, side: str) -> tuple[float, float]:
+
+def apply_costs(
+    entry: float, exit: float, fee_bps: float, slippage_bps: float, side: str
+) -> tuple[float, float]:
     cost = (fee_bps + slippage_bps) / 10000
     if side.upper() == "LONG":
         return entry * (1 + cost), exit * (1 - cost)
     return entry * (1 - cost), exit * (1 + cost)
+
 
 def run_backtest(
     csv_path: str,
@@ -72,16 +78,18 @@ def run_backtest(
             balance += pnl
             return_pct = pnl / max(starting_balance, 1e-9) * 100
 
-            trades.append(BacktestTrade(
-                asset=row["asset"],
-                entry_price=round(adj_entry, 4),
-                exit_price=round(adj_exit, 4),
-                side="LONG",
-                pnl=round(pnl, 2),
-                return_pct=round(return_pct, 4),
-                alpha=alpha,
-                z=round(z, 4),
-            ))
+            trades.append(
+                BacktestTrade(
+                    asset=row["asset"],
+                    entry_price=round(adj_entry, 4),
+                    exit_price=round(adj_exit, 4),
+                    side="LONG",
+                    pnl=round(pnl, 2),
+                    return_pct=round(return_pct, 4),
+                    alpha=alpha,
+                    z=round(z, 4),
+                )
+            )
 
             equity_peak = max(equity_peak, balance)
             dd = (equity_peak - balance) / equity_peak * 100
@@ -97,7 +105,9 @@ def run_backtest(
     losses = [t for t in trades if t.pnl <= 0]
     gross_profit = sum(t.pnl for t in wins)
     gross_loss = abs(sum(t.pnl for t in losses))
-    profit_factor = gross_profit / gross_loss if gross_loss else float("inf") if gross_profit else 0.0
+    profit_factor = (
+        gross_profit / gross_loss if gross_loss else float("inf") if gross_profit else 0.0
+    )
 
     return BacktestResult(
         trades=trades,

@@ -1,5 +1,6 @@
 HIGH_IMPACT_EVENTS = ["CPI", "FOMC", "FED", "RBI", "NFP", "GDP", "INFLATION"]
 
+
 def macro_guard(event_title: str, minutes_to_event: int) -> dict:
     title = event_title.upper()
     high_impact = any(keyword in title for keyword in HIGH_IMPACT_EVENTS)

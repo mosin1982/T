@@ -17,6 +17,7 @@ except ImportError:  # pragma: no cover
 
 PUBLIC_REST_URL = "https://api.binance.com/api/v3/trades?symbol={symbol}&limit=1000"
 
+
 class BinancePublicStream:
     """Observation-only Binance public market stream.
 
@@ -58,7 +59,10 @@ class BinancePublicStream:
                 async with websockets.connect(url, ping_interval=20, ping_timeout=20) as ws:
                     async for message in ws:
                         self.process_message(message)
-                        if self.max_runtime_seconds and time.time() - started >= self.max_runtime_seconds:
+                        if (
+                            self.max_runtime_seconds
+                            and time.time() - started >= self.max_runtime_seconds
+                        ):
                             print("[T Real-World Mode] max runtime reached. Exiting cleanly.")
                             return
             except Exception as exc:
@@ -116,19 +120,27 @@ class BinancePublicStream:
         self.current_minute = minute
         return signal
 
+
 def rest_poll_once(symbol: str = "BTCUSDT") -> dict:
     """Public no-key REST fallback for basic connectivity testing."""
     url = PUBLIC_REST_URL.format(symbol=symbol.upper())
     with urllib.request.urlopen(url, timeout=10) as response:
         data = json.loads(response.read().decode("utf-8"))
     last = data[-1]
-    return {"symbol": symbol.upper(), "price": float(last["price"]), "qty": float(last["qty"]), "trades": len(data)}
+    return {
+        "symbol": symbol.upper(),
+        "price": float(last["price"]),
+        "qty": float(last["qty"]),
+        "trades": len(data),
+    }
+
 
 async def main() -> None:
     symbol = os.getenv("BINANCE_SYMBOL", "btcusdt")
     threshold = float(os.getenv("Z_SCORE_THRESHOLD", "3.0"))
     telegram = os.getenv("TELEGRAM_ENABLED", "false").lower() == "true"
     await BinancePublicStream(symbol=symbol, threshold=threshold, telegram=telegram).run()
+
 
 if __name__ == "__main__":
     asyncio.run(main())
