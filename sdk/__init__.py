@@ -1,1 +1,1 @@
-from .client import TClient
+from .client import TClient as TClient
