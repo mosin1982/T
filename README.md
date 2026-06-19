@@ -5,72 +5,81 @@
 [![Smoke](https://github.com/mosin1982/T/actions/workflows/smoke.yml/badge.svg)](https://github.com/mosin1982/T/actions/workflows/smoke.yml)
 [![Release](https://github.com/mosin1982/T/actions/workflows/release.yml/badge.svg)](https://github.com/mosin1982/T/actions/workflows/release.yml)
 
-**T** is an open-source **Financial Intelligence Operating System** by **T Technology Research Lab** for market research, paper trading, backtesting, risk analysis, smart money intelligence, and research-first financial automation workflows.
+**T** is an open-source Financial Intelligence Operating System by **T Technology Research Lab**.
 
-> **Research only. Not financial advice.**
-> T is not a guaranteed-profit trading bot, investment advisor, live trading recommendation system, or real-money execution product.
+It is designed for market research, paper trading, backtesting, risk analysis, dashboard analytics, and hallucination-resistant research workflows.
+
+```text
+Research only. Not financial advice.
+```
 
 ---
 
 ## Important Links
 
-| Resource                     | Link                                                                        |
-| ---------------------------- | --------------------------------------------------------------------------- |
-| GitHub Repository            | [github.com/mosin1982/T](https://github.com/mosin1982/T)                    |
-| Latest Release               | [Releases / Latest](https://github.com/mosin1982/T/releases/latest)         |
-| Current Recommended Release  | [v0.9.2-alpha](https://github.com/mosin1982/T/releases/tag/v0.9.2-alpha)    |
-| First Stable Public Alpha    | [v0.8.2-alpha](https://github.com/mosin1982/T/releases/tag/v0.8.2-alpha)    |
-| CI Workflow                  | [CI](https://github.com/mosin1982/T/actions/workflows/ci.yml)               |
-| Docker Workflow              | [Docker Build](https://github.com/mosin1982/T/actions/workflows/docker.yml) |
-| Smoke Workflow               | [Smoke](https://github.com/mosin1982/T/actions/workflows/smoke.yml)         |
-| Release Workflow             | [Release](https://github.com/mosin1982/T/actions/workflows/release.yml)     |
-| License                      | [LICENSE](LICENSE)                                                          |
-| Disclaimer                   | [DISCLAIMER.md](DISCLAIMER.md)                                              |
-| Security Policy              | [SECURITY.md](SECURITY.md)                                                  |
-| Contributing Guide           | [CONTRIBUTING.md](CONTRIBUTING.md)                                          |
-| Code of Conduct              | [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)                                    |
-| Support                      | [SUPPORT.md](SUPPORT.md)                                                    |
-| Donate / Support Development | [DONATE.md](DONATE.md)                                                      |
-| Changelog                    | [CHANGELOG.md](CHANGELOG.md)                                                |
+| Item                  | Link                                                         |
+| --------------------- | ------------------------------------------------------------ |
+| GitHub Repository     | https://github.com/mosin1982/T                               |
+| Latest Releases       | https://github.com/mosin1982/T/releases                      |
+| CI Workflow           | https://github.com/mosin1982/T/actions/workflows/ci.yml      |
+| Docker Workflow       | https://github.com/mosin1982/T/actions/workflows/docker.yml  |
+| Smoke Workflow        | https://github.com/mosin1982/T/actions/workflows/smoke.yml   |
+| Release Workflow      | https://github.com/mosin1982/T/actions/workflows/release.yml |
+| Safety Policy         | [docs/SAFETY_POLICY.md](docs/SAFETY_POLICY.md)               |
+| Professional Services | [docs/SERVICES.md](docs/SERVICES.md)                         |
+| Disclaimer            | [DISCLAIMER.md](DISCLAIMER.md)                               |
+| Security              | [SECURITY.md](SECURITY.md)                                   |
+| Support               | [SUPPORT.md](SUPPORT.md)                                     |
+| Contributing          | [CONTRIBUTING.md](CONTRIBUTING.md)                           |
+| Code of Conduct       | [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)                     |
+| Changelog             | [CHANGELOG.md](CHANGELOG.md)                                 |
+| Donate                | [DONATE.md](DONATE.md)                                       |
 
 ---
 
-## Overview
+## Current Status
 
-T is a public alpha research platform built to explore financial intelligence workflows safely and transparently.
+T is currently in public alpha development.
 
-It provides a foundation for:
+The current repo work is being prepared toward:
 
-* Market research
-* Paper trading simulations
-* Backtesting experiments
+```text
+v0.10.0-alpha
+```
+
+No version above `v0.10.0-alpha` is planned at this stage.
+
+Current direction:
+
+* Enhanced backtest analytics
+* Dashboard analytics view
+* Equity curve visualization
+* Trade table view
+* Research safety panel
+* Hallucination-resistant output guard
+* Safety policy documentation
+* Professional services documentation
+* README polish
+
+---
+
+## What T Does
+
+T provides a research-first framework for:
+
+* Market data analysis
+* Volume anomaly scoring
+* Alpha-style research scoring
+* Paper trading workflows
+* Backtesting
 * Risk analysis
-* Smart money intelligence workflows
-* Event-driven financial research
-* Lightweight data-lake experiments
-* Mission-control health checks
-* Dashboard-based research visibility
+* Dashboard analytics
+* Trade table review
+* Equity curve tracking
+* Safety-oriented research output
+* Documentation for responsible usage
 
-T is designed to be a **research-first platform**, not a profit-promise product.
-
----
-
-## Current Release Status
-
-Recommended release:
-
-```text
-v0.9.2-alpha
-```
-
-Release notes:
-
-```text
-v0.8.2-alpha  - First stable public alpha release
-v0.9.2-alpha  - Dashboard alpha / latest clean release
-```
-
-Older intermediate releases such as `v0.9.0-alpha` and `v0.9.1-alpha` may exist as development attempts and should not be treated as the recommended version.
+T is not a live money execution system by default. It is intended for analysis, testing, education, and research workflows.
 
 ---
 
@@ -78,69 +87,55 @@ Older intermediate releases such as `v0.9.0-alpha` and `v0.9.1-alpha` may exist 
 
 ### Research Engine
 
-* Demo mode for sample market-intelligence flow
-* Research-only signal generation
-* Alpha-score foundation
-* Risk-label foundation
-* Explainable signal output
+T includes scoring utilities for studying market behavior using:
 
-### Backtesting Engine
+* Volume anomaly detection
+* Alpha-style scoring
+* Risk labels
+* Research explanations
+* Safety-oriented output text
 
-* CSV-based backtesting
-* Entry/exit simulation
-* Fee and slippage support
-* PnL calculation
-* Win-rate calculation
-* Profit-factor calculation
-* Max-drawdown tracking
-* JSON report output
+### Backtest Engine
 
-### Paper Trading Foundation
+The backtest system supports:
 
-* Virtual capital simulation
-* Safe research-only execution model
-* No real order placement
-* Experimentation-first architecture
-
-### Mission Control
-
-* Repository health checks
-* Sample-data checks
-* Tests-folder checks
-* Documentation checks
-* Backtest-report checks
-* Research-only status reporting
+* Starting balance
+* Ending balance
+* Net PnL
+* Win rate
+* Profit factor
+* Max drawdown
+* Total trades
+* Average win
+* Average loss
+* Best trade PnL
+* Worst trade PnL
+* Average return percentage
+* Equity curve tracking
 
 ### Dashboard
 
-* Streamlit-based Mission Dashboard
-* Mission-control status viewer
-* Backtest-report viewer
-* Research-only warning panel
-* Alpha roadmap visibility
+The Streamlit dashboard provides:
 
-### Platform Foundations
+* Mission control checks
+* Backtest analytics metrics
+* Equity curve visualization
+* Trade table view
+* Raw JSON inspection
+* Research safety panel
+* Project status summary
 
-* Event sourcing foundation
-* SQLite data lake foundation
-* Plugin system foundation
-* SDK skeleton
-* API gateway skeleton
-* Validation center
-* Data-quality checks
-* Benchmark strategy foundation
+### Hallucination-Resistant Guard
 
-### DevOps and Release Automation
+T includes a research output guard that helps reduce unsafe or overconfident market language.
 
-* GitHub Actions CI
-* Docker Build workflow
-* Smoke workflow
-* Release workflow
-* Public GitHub releases
-* Security policy
-* Contributing guide
-* Code of Conduct
-* Disclaimer and support files
+The guard is designed to detect and sanitize:
+
+* Profit assurance language
+* Direct directional trading instruction
+* Unsafe certainty claims
+* Unsafe return-assurance language
+* Overconfident market prediction language
 
 ---
 
@@ -153,52 +148,34 @@ git clone https://github.com/mosin1982/T.git
 cd T
 ```
 
-Create a virtual environment:
+Create and activate a virtual environment:
 
 ```bash
 python -m venv .venv
 ```
 
-Activate it on Windows PowerShell:
+Windows PowerShell:
 
 ```powershell
-.venv\Scripts\Activate.ps1
+.venv\Scripts\activate
+```
+
+Linux/macOS:
+
+```bash
+source .venv/bin/activate
 ```
 
 Install dependencies:
 
 ```bash
 python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
-```
-
-Install development tools:
-
-```bash
-python -m pip install black ruff pytest
+pip install -r requirements.txt
 ```
 
 ---
 
 ## Quick Start
-
-Run demo mode:
-
-```bash
-python t_cli.py demo
-```
-
-Run backtest mode:
-
-```bash
-python t_cli.py backtest
-```
-
-Run mission control:
-
-```bash
-python t_cli.py mission-control
-```
 
 Run tests:
 
@@ -206,71 +183,79 @@ Run tests:
 python -m pytest -q
 ```
 
-Run code-quality checks:
+Run formatting:
 
 ```bash
-python -m black --check .
-python -m ruff check .
+python -m black .
 ```
 
----
+Run linting:
 
-## Mission Dashboard
+```bash
+python -m ruff check . --fix
+```
 
-T includes a lightweight Streamlit Mission Dashboard for research visibility, mission-control checks, and backtest-report review.
-
-Run locally:
+Run the dashboard:
 
 ```bash
 python -m streamlit run dashboard/app.py
 ```
 
-Then open:
-
-```text
-http://localhost:8501
-```
-
-Dashboard screenshot path:
-
-```text
-docs/images/t-mission-dashboard.png
-```
-
-If the screenshot exists in the repository, it will render here:
-
-![T Mission Dashboard](docs/images/t-mission-dashboard.png)
-
----
-
-## Backtest Report
-
-After running:
+Run a backtest if your CLI command is available:
 
 ```bash
 python t_cli.py backtest
 ```
 
-T saves a backtest report at:
+---
+
+## Dashboard
+
+The dashboard is located at:
 
 ```text
-reports/backtests/backtest_report.json
+dashboard/app.py
 ```
 
-Example report fields:
+Run:
 
-```json
-{
-  "starting_balance": 10000,
-  "ending_balance": 10004.43,
-  "max_drawdown_pct": 0,
-  "win_rate_pct": 100,
-  "profit_factor": "inf",
-  "net_pnl": 4.43
-}
+```bash
+python -m streamlit run dashboard/app.py
 ```
 
-This report is for research and testing only.
+Dashboard sections include:
+
+* System overview
+* Mission control
+* Backtest analytics
+* Equity curve
+* Trade table
+* Research safety panel
+* Next repo updates before `v0.10.0-alpha`
+
+---
+
+## Backtest Analytics
+
+The enhanced backtest report includes:
+
+| Metric             | Description                           |
+| ------------------ | ------------------------------------- |
+| starting_balance   | Initial simulated capital             |
+| ending_balance     | Final simulated capital               |
+| net_pnl            | Simulated profit/loss after test      |
+| max_drawdown_pct   | Maximum simulated drawdown percentage |
+| win_rate_pct       | Percentage of winning trades          |
+| profit_factor      | Gross profit divided by gross loss    |
+| total_trades       | Number of generated trades            |
+| average_win        | Average PnL of winning trades         |
+| average_loss       | Average PnL of losing trades          |
+| best_trade_pnl     | Best single simulated trade PnL       |
+| worst_trade_pnl    | Worst single simulated trade PnL      |
+| average_return_pct | Average simulated return percentage   |
+| equity_curve       | Step-by-step simulated balance curve  |
+
+Backtest results are historical simulations and should be reviewed carefully.
 
 ---
 
@@ -278,153 +263,95 @@ This report is for research and testing only.
 
 ```text
 T/
-├── agents/
-├── alerts/
-├── api/
-├── backtest/
-├── benchmark/
-├── core/
-├── dashboard/
-├── datalake/
-├── docs/
-├── events/
-├── mission_control/
-├── modes/
-├── modules/
-├── nexus/
-├── paper/
-├── plugins/
-├── quality/
-├── realworld/
-├── reports/
-├── sdk/
-├── tests/
-├── validation/
-├── t_cli.py
-├── requirements.txt
-├── README.md
-├── LICENSE
-├── DISCLAIMER.md
-├── SECURITY.md
-├── CONTRIBUTING.md
-├── CODE_OF_CONDUCT.md
-├── DONATE.md
-└── SUPPORT.md
+├─ README.md
+├─ CHANGELOG.md
+├─ CODE_OF_CONDUCT.md
+├─ CONTRIBUTING.md
+├─ DISCLAIMER.md
+├─ DONATE.md
+├─ SECURITY.md
+├─ SUPPORT.md
+├─ backtest/
+│  └─ engine.py
+├─ dashboard/
+│  └─ app.py
+├─ data/
+├─ docs/
+│  ├─ SAFETY_POLICY.md
+│  └─ SERVICES.md
+├─ modes/
+│  └─ scoring.py
+├─ quality/
+│  ├─ __init__.py
+│  └─ hallucination_guard.py
+├─ reports/
+├─ tests/
+└─ t_cli.py
 ```
 
 ---
 
-## CLI Commands
+## Safety Policy
 
-### Demo Mode
+T is designed as research-only software.
 
-```bash
-python t_cli.py demo
-```
+The project should be positioned as:
 
-Runs the sample research/demo mode.
+* Research software
+* Educational tooling
+* Backtesting infrastructure
+* Paper-trading support
+* Financial intelligence research system
 
-### Backtest Mode
+The project should not be positioned as:
 
-```bash
-python t_cli.py backtest
-```
+* A wealth-generation product
+* A return-assurance product
+* A direct trading instruction service
+* A portfolio management service
+* A replacement for licensed professionals
 
-Runs the backtest engine and saves a JSON report.
+Read the full policy:
 
-### Mission Control
-
-```bash
-python t_cli.py mission-control
-```
-
-Shows system health and readiness checks.
-
-### Real-World Observation Mode
-
-If available in your local setup:
-
-```bash
-python t_cli.py real-binance --symbol btcusdt --threshold 3.0
-```
-
-This is observation-only and does not place trades.
+[docs/SAFETY_POLICY.md](docs/SAFETY_POLICY.md)
 
 ---
 
-## Safety Positioning
+## Professional Services
 
-T is intentionally positioned as:
+The T source code may be available publicly for research and development use.
 
-```text
-Research software
-Paper trading foundation
-Backtesting framework
-Financial intelligence workflow platform
-```
-
-T is **not**:
-
-```text
-Guaranteed-profit trading software
-Financial advice
-Investment advice
-Live trading recommendation software
-Real-money execution system
-```
-
-Always use T responsibly.
-
----
-
-## Commercial Use and Professional Services
-
-The source code may be publicly available through GitHub, but professional services can be charged separately.
-
-Possible paid services include:
+T Technology Research Lab may provide paid services for:
 
 * Setup and installation
+* Training and walkthrough
 * Dashboard customization
-* Strategy module development
-* Backtest/report customization
 * Data integration
-* Training
-* Deployment
-* Business integration
-* Monthly support
+* Strategy module configuration
+* Business workflow integration
+* Deployment support
+* Monthly technical support
+* Enterprise R&D customization
 
-Suggested service positioning:
+Suggested service ranges:
 
-```text
-Source access: public alpha / GitHub
-Setup and support: paid
-Customization and integration: paid
-Enterprise/R&D work: custom quotation
-```
+| Service Type                       |      Suggested Range |
+| ---------------------------------- | -------------------: |
+| Basic demo/setup                   |     ₹5,000 – ₹15,000 |
+| Professional installation/training |    ₹15,000 – ₹35,000 |
+| Custom dashboard/reporting         |    ₹25,000 – ₹75,000 |
+| Business/custom integration        | ₹75,000 – ₹2,50,000+ |
+| Monthly support                    |     ₹5,000 – ₹50,000 |
 
-Indicative INR pricing for services:
+Read more:
 
-```text
-Basic demo/setup: ₹5,000 – ₹15,000
-Professional installation/training: ₹15,000 – ₹35,000
-Custom dashboard/reporting: ₹25,000 – ₹75,000
-Custom strategy module: ₹30,000 – ₹1,00,000
-Business/custom integration: ₹75,000 – ₹2,50,000+
-Monthly support: ₹5,000 – ₹50,000/month
-Enterprise/R&D version: ₹2,50,000 – ₹10,00,000+
-```
-
-These are service fees, not trading-performance fees.
+[docs/SERVICES.md](docs/SERVICES.md)
 
 ---
 
 ## Donate / Support Development
 
-T is developed as a public alpha research project by **T Technology Research Lab**.
-
 If this project helps your research, learning, testing, or development workflow, you can support the project through donations or paid professional services.
-
-### Donation Options
 
 | Method      | Details                              |
 | ----------- | ------------------------------------ |
@@ -432,17 +359,9 @@ If this project helps your research, learning, testing, or development workflow,
 | Binance UID | `475627577`                          |
 | USDT TRC20  | `TLFLEDbN47bSBkWeqZzMNgkrzRK64RHbVn` |
 
-### Important Donation Notice
+Donations are voluntary and do not create any investment relationship, trading promise, profit assurance, advisory relationship, or service obligation.
 
-Donations are voluntary and do not create any investment relationship, trading promise, profit guarantee, financial advisory relationship, or service obligation.
-
-T remains:
-
-```text
-Research only. Not financial advice.
-```
-
-For setup, training, dashboard customization, business integration, or enterprise R&D work, use paid professional service engagement instead of donation.
+For setup, training, dashboard customization, business integration, or enterprise R&D work, use a paid professional service engagement instead of donation.
 
 ---
 
@@ -451,153 +370,123 @@ For setup, training, dashboard customization, business integration, or enterpris
 Recommended workflow:
 
 ```bash
-git checkout -b feature/my-feature
+git checkout main
+git pull origin main
+git checkout -b feature/your-feature-name
+```
+
+Run quality checks:
+
+```bash
 python -m black .
 python -m ruff check . --fix
 python -m pytest -q
-git add .
-git commit -m "Describe change"
-git push
 ```
 
-Before tagging a release, always run:
+Commit:
 
 ```bash
-python -m black --check .
-python -m ruff check .
-python -m pytest -q
+git add .
+git commit -m "Describe the repo update"
+git push --set-upstream origin feature/your-feature-name
 ```
 
-Do not tag a release until CI is green.
+Then open a pull request on GitHub.
 
 ---
 
-## Release Process
+## Release Discipline
 
-Create a new tag:
-
-```bash
-git tag v0.9.3-alpha
-git push origin v0.9.3-alpha
-```
-
-GitHub Actions will create the release automatically if workflow permissions are enabled.
-
-Recommended release rules:
+Current rule:
 
 ```text
-Never tag before CI green.
-Never release from a broken merge state.
-Never leave conflict markers in code.
-Always run Black, Ruff, and Pytest before release.
+Do not go above v0.10.0-alpha at this stage.
 ```
+
+Before any release:
+
+* All tests must pass
+* CI must be green
+* Dashboard should run locally
+* README should be updated
+* Safety policy should be present
+* Services documentation should be present
+* Release notes should be clear
+
+No release should be created from a broken branch, failed CI run, or unresolved merge state.
 
 ---
 
-## Roadmap
+## CI and Quality
 
-### v0.9.x-alpha
+The repository uses GitHub Actions for quality checks.
 
-* Dashboard screenshot in README
-* Dashboard polish
-* Backtest chart visualizations
-* Better sample data
-* Real-world observation UI
-* Strategy comparison table
+Typical checks include:
 
-### v1.0-alpha
+* Black format check
+* Ruff lint check
+* Pytest test suite
+* Smoke workflow
+* Docker build workflow
+* Release workflow
 
-* Stronger strategy module system
-* Better risk engine
-* Improved event/data lake architecture
-* Documentation website
-* Hosted dashboard demo
-* Public demo video
+Local commands:
 
-### Future R&D
-
-* AI research assistant
-* Smart money intelligence workflows
-* Portfolio research workflows
-* Broker/data-provider adapters
-* Advanced backtest analytics
-* Strict CI workflow with mypy, bandit, and pip-audit
+```bash
+python -m black .
+python -m ruff check . --fix
+python -m pytest -q
+```
 
 ---
 
 ## Security
 
-Do not commit:
+Security issues should be handled responsibly.
 
-```text
-API keys
-Telegram tokens
-Broker credentials
-Exchange credentials
-Private wallet keys
-Real trading secrets
-```
+Read:
 
-Use environment variables or local `.env` files.
-
-Read the security policy:
-
-```text
-SECURITY.md
-```
+[SECURITY.md](SECURITY.md)
 
 ---
 
 ## Contributing
 
-Contributions are welcome for research, testing, documentation, and safe feature development.
+Contributions should follow the project safety position and research-only direction.
 
 Read:
 
-```text
-CONTRIBUTING.md
-```
+[CONTRIBUTING.md](CONTRIBUTING.md)
 
 ---
 
 ## Support
 
-For support, setup, training, customization, or business integration, see:
+For support options, read:
 
-```text
-SUPPORT.md
-```
-
-To support development, see:
-
-```text
-DONATE.md
-```
+[SUPPORT.md](SUPPORT.md)
 
 ---
 
 ## Disclaimer
 
-T is provided for research and educational purposes only.
+T is public alpha research software.
 
-No part of this software should be interpreted as:
+```text
+Research only. Not financial advice.
+```
 
-* Financial advice
-* Investment advice
-* Trading advice
-* Profit guarantee
-* Risk-free system
-* Live trading instruction
+T does not remove market risk, data risk, model risk, operational risk, or human decision risk.
 
-Markets are risky. Use responsibly.
+Users are responsible for reviewing outputs, validating assumptions, and complying with applicable laws and regulations.
 
 ---
 
-## Signature
+## Maintainer
 
-```text
+**T Technology Research Lab**
+
 ━━━━━━━━━━━━━━━━━━━━
 T
 T Technology Research Lab
 ━━━━━━━━━━━━━━━━━━━━
-```
