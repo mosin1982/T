@@ -5,16 +5,37 @@
       "entry_price": 68504.76,
       "exit_price": 68535.128,
       "side": "LONG",
-      "pnl": 4.43,
-      "return_pct": 0.0443,
+      "pnl": 0.04,
+      "return_pct": 0.0004,
       "alpha": 81.7,
       "z": 52.3963
+    },
+    {
+      "asset": "BTC/USDT",
+      "entry_price": 68674.896,
+      "exit_price": 68695.0,
+      "side": "LONG",
+      "pnl": 0.03,
+      "return_pct": 0.0003,
+      "alpha": 74.85,
+      "z": 2.713
     }
   ],
   "starting_balance": 10000.0,
-  "ending_balance": 10004.43,
+  "ending_balance": 10000.07,
   "max_drawdown_pct": 0.0,
   "win_rate_pct": 100.0,
   "profit_factor": "inf",
-  "net_pnl": 4.43
+  "net_pnl": 0.07,
+  "total_trades": 2,
+  "average_win": 0.04,
+  "average_loss": 0.0,
+  "best_trade_pnl": 0.04,
+  "worst_trade_pnl": 0.03,
+  "average_return_pct": 0.0003,
+  "equity_curve": [
+    10000.0,
+    10000.04,
+    10000.07
+  ]
 }
